@@ -109,12 +109,18 @@ class Racing extends Component{
         />
         <div className="trackContainer">
           {this.state.activeHorses.map((horse, i) => {
-            return <Horse
+            return <div style={{
+              position: 'absolute',
+              top: `${i*64}px`
+            }}><Horse
               name={horse.name}
               active={this.state.raceActive}
               distance={this.state.raceDistance}
               endrace={this.endRace}
-            />
+              style={{
+                backgroundColor: 'orange'
+              }}
+            /></div>
           }
             // {horse}
           )}

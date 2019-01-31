@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import random from 'lodash/random';
+import './Horse.css';
 
 class Horse extends Component{
   constructor(props){
@@ -24,13 +25,8 @@ class Horse extends Component{
     }
 
     return (
-      <div style={{
-        backgroundImage: `url('https://i.imgur.com/DkVuurO.png')`,
-        marginLeft: `${this.state.distance}px`,
-        width: `100px`,
-        height: `64px`,
-        backgroundSize: `contain`,
-        backgroundRepeat: `no-repeat`,
+      <div className="horse" style={{
+        left: `${this.state.distance}px`,
       }}>
         {this.props.name}
       </div>
