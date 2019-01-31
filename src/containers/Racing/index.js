@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Horse from '../../components/Racing/Horse';
-import css from './racing.css';
+import './racing.css';
 
 class Racing extends Component{
   constructor(props){
@@ -72,6 +72,17 @@ class Racing extends Component{
     return (
       <div className="raceContainer">
         { !this.state.raceActive &&
+        <React.Fragment>
+          <div className='placePanel'>
+            <h3>Easy Options:</h3>
+            <div>
+              {
+                this.placeOptions.map( (place, index) => 
+                  <button onClick={this.addHorse}>{place}</button>
+                )
+              }
+            </div>
+        </div>
         <div>
           <div>
             <form className="addHorse" onSubmit={this.addHorse}>
@@ -96,6 +107,7 @@ class Racing extends Component{
             }
           </div>
         </div>
+        </React.Fragment>
         }
         <div
           className="finishLine"
@@ -124,16 +136,6 @@ class Racing extends Component{
           }
             // {horse}
           )}
-        </div>
-        <div className='placePanel'>
-          <h3>Easy Options:</h3>
-          <div>
-          {
-            this.placeOptions.map( (place, index) => 
-              <button onClick={this.addHorse}>{place}</button>
-            )
-          }
-          </div>
         </div>
       </div>
     );
